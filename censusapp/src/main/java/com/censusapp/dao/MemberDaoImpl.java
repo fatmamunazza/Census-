@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import com.censusapp.constant.Constants;
 import com.censusapp.entities.Member;
@@ -24,9 +25,14 @@ public class MemberDaoImpl implements MemberDAO {
 	static Statement sqlStatement = null;
 	static Statement sqlStatement2 = null;
 	static String statement = null;
-	private static final String url="jdbc:mysql://localhost:3306/census_app_db";
-	private static final String user="Admin";
-	private static final String password="Sapient123";
+    static ResourceBundle resourceBundle= ResourceBundle.getBundle("jdbc-config");
+	
+	private static final String url=resourceBundle.getString("jdbc.url");
+	private static final String user=resourceBundle.getString("jdbc.username");
+	private static final String password=resourceBundle.getString("jdbc.password");
+//	private static final String url="jdbc:mysql://localhost:3306/census_app_db";
+//	private static final String user="Admin";
+//	private static final String password="Sapient123";
 	
 	
 	public void startDatabaseConnection() throws Exception {
