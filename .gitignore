@@ -1,0 +1,11 @@
+#ignore .setting files,target and mysql-connector-java
+#**/.settings
+**/mysql-connector-java-8.0.25
+**/target
+
+#ignore .idea file
+.idea
+
+# ignore  .classpath and .project
+*.classpath
+#*.project
